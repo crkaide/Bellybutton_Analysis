@@ -3,7 +3,7 @@
 function init() {
     var selector = d3.select("#selDataset");
   
-    d3.json("/Users/crkaide/OneDrive - IL State University/Vanderbilt/Vanderbilt/Assignments/12_Data_Visualization_in_JavaScript/data-12-5-1-resources/Bellybutton_Analysis/js/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
       console.log(data);
       var sampleNames = data.names;
       sampleNames.forEach((sample) => {
@@ -32,7 +32,7 @@ function optionChanged(newSample) {
 }
 
 function buildMetadata(sample) {
-    d3.json("/Users/crkaide/OneDrive - IL State University/Vanderbilt/Vanderbilt/Assignments/12_Data_Visualization_in_JavaScript/data-12-5-1-resources/Bellybutton_Analysis/js/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
       var metadata = data.metadata;
       var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
       var result = resultArray[0];
