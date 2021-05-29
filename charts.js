@@ -58,30 +58,38 @@ function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
   d3.json("samples.json").then((data) => {
     // 3. Create a variable that holds the samples array. 
+    var samples = data.samples;
 
     // 4. Create a variable that filters the samples for the object with the desired sample number.
+    var samplesArray = samples.filter(samObj => samObj.id == sample);
 
     //  5. Create a variable that holds the first sample in the array.
-
+    var firstSample = samplesArray[0];
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-
+    var otu_Ids = firstSample.otu_ids;
+    var otu_Labels = firstSample.otu_labels;
+    var sample_Values = firstSample.sample_values;
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
 
-    var yticks = 
+    var yticks = otu_Ids.slice(0, 10).map(samId => 'OTU' + samId).reverse();
 
     // 8. Create the trace for the bar chart. 
-    var barData = [
-      
-    ];
+    var barData = [{
+      x: sample_Values.slice(0, 10).reverse(),
+      y: yticks,
+      type: "bar",
+      orientation: "h"
+    }];
+
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-     
+      title: "Top 10 Bacteria Cultures Found"     
     };
     // 10. Use Plotly to plot the data with the layout. 
-    
+    Plotly.newPlot("bar", barData, barLayout);    
   });
 }
