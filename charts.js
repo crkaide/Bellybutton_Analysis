@@ -115,7 +115,7 @@ function buildCharts(sample) {
       hovermode: "closest",
       showlegend: false,
       height: 600,
-      width: 1800,
+      width: 1000,
       margin: {
         l: 50,
         r: 50,
