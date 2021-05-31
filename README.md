@@ -9,4 +9,4 @@ _The correct folder structure, as stated by the module, is an index.html file on
 _Initial troubleshooting included correctly filing the js scripts (into the js folder) and attempting to link to them via both 1) relative file name, and then 2) the direct file path.  As long as html and js files are not housed in the same folder, this does not seem to wish to run correctly._
 
 ## Dashboard screen shot
-![]()
+![dashboard_ss.png](https://github.com/crkaide/Bellybutton_Analysis/blob/main/dashboard_ss.png?raw=true)
