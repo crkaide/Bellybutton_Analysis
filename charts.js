@@ -116,7 +116,7 @@ function buildCharts(sample) {
       xaxis: { title: "OTU ID"},
       hovermode: "closest",
       showlegend: false,
-      height: 600,
+      height: 400,
       width: 1000,
       margin: {
         l: 50,
@@ -132,23 +132,77 @@ function buildCharts(sample) {
 
 
 
-    // Delivarable 3
+    // Deliverable 3
     // Starter code : "/BellyButton_gauge_starter_code"
 
     // 3. Create a variable that holds the washing frequency.
-    washFreq = firstSample.;
+    var gaugeMetadata = data.metadata;
+    var gaugeMetadataArray = gaugeMetadata.filter(samObj => samObj.id == sample);
+    var firstMetaSamp = gaugeMetadataArray[0];
+    var washFreq = firstMetaSamp.wfreq;
+    var gaugeTitle = '<b>Belly Button Washing Frequency</b><br>Scrubs per Week</br>';
 
     // 4. Create the trace for the gauge chart.
-    var gaugeData = [
-     
-    ];
+    var gaugeData = [{
+      domain: {
+        x: [, ],
+        y: [, ]
+      },
+      value: washFreq,
+      title: {
+        text: gaugeTitle,
+        font: {
+          size: 18
+        }
+      },
+      type: "indicator",
+      mode: "gauge+number",
+      gauge: {
+        axis: {
+          range: [0, 10],
+          dtick: 2
+        },
+        bar: {
+          color: "black"
+        },
+        steps: [
+          {
+            range: [0, 2],
+            color: "red"
+          },
+          {
+            range: [2, 4],
+            color: "orange"
+          },
+          {
+            range: [4, 6],
+            color: "yellow"
+          },
+          {
+            range: [6, 8],
+            color: "yellowgreen"
+          },
+          {
+            range: [8, 11],
+            color: "green"
+          }
+        ],
+      }   
+    }];
     
     // 5. Create the layout for the gauge chart.
-    var gaugeLayout = { 
-     
+    var gaugeLayout = {
+      width: 350,
+      hieght: 200,
+      margin: {
+        t: 10,
+        b: 5,
+        r: 5,
+        l: 5
+      }
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", guageData, guageLayout);
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
   });
 }
