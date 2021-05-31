@@ -104,7 +104,7 @@ function buildCharts(sample) {
       marker: {
         size: sample_Values,
         color: otu_Ids,
-        colorscale: "Earth"
+        colorscale: "Jet" // "Earth" matches module: https://plotly.com/javascript/colorscales/
       }
     }];
 
@@ -113,9 +113,9 @@ function buildCharts(sample) {
       title: "Bacteria Cultures Per Sample",
       xaxis: { title: "OTU ID"},
       hovermode: "closest",
-      showlegend: true,
+      showlegend: false,
       height: 600,
-      width: 600,
+      width: 1800,
       margin: {
         l: 50,
         r: 50,
