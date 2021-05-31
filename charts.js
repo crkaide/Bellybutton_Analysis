@@ -92,6 +92,8 @@ function buildCharts(sample) {
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
 
+
+
     // Deliverable 2
     // Starter code: "/BellyButton_bubble_chart_starter_code.js"
 
@@ -104,7 +106,7 @@ function buildCharts(sample) {
       marker: {
         size: sample_Values,
         color: otu_Ids,
-        colorscale: "Jet" // "Earth" matches module: https://plotly.com/javascript/colorscales/
+        colorscale: "Earth" // "Earth" matches module: https://plotly.com/javascript/colorscales/
       }
     }];
 
@@ -130,10 +132,23 @@ function buildCharts(sample) {
 
 
 
+    // Delivarable 3
+    // Starter code : "/BellyButton_gauge_starter_code"
 
+    // 3. Create a variable that holds the washing frequency.
+    washFreq = firstSample.;
 
+    // 4. Create the trace for the gauge chart.
+    var gaugeData = [
+     
+    ];
+    
+    // 5. Create the layout for the gauge chart.
+    var gaugeLayout = { 
+     
+    };
 
-
-
+    // 6. Use Plotly to plot the gauge data and layout.
+    Plotly.newPlot("gauge", guageData, guageLayout);
   });
 }
