@@ -10,4 +10,3 @@ _Initial troubleshooting included correctly filing the js scripts (into the js f
 
 ## Dashboard screen shot
 ![dashboard_ss.png](https://github.com/crkaide/Bellybutton_Analysis/blob/main/dashboard_ss.png?raw=true)
-
